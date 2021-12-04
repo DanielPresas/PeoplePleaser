@@ -1,0 +1,67 @@
+.NextTaskContainer {
+    height: 150px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.NextTaskTitle {
+    -unity-font: url('project://database/Assets/_Project/Graphics/UI/Fonts/Cuprum-VariableFont_wght.ttf?fileID=12800000&guid=7c8cd956ae05d214e997059416ddd9d3&type=3#Cuprum-VariableFont_wght');
+    -unity-text-align: middle-center;
+    font-size: 36px;
+    position: absolute;
+    top: 2px;
+    color: rgb(0, 0, 0);
+}
+
+.NextTaskDescription {
+    color: rgb(0, 0, 0);
+    -unity-text-align: middle-center;
+    white-space: nowrap;
+}
+
+.NextTaskTimerIcon {
+    flex-direction: row;
+    justify-content: space-between;
+    background-image: url('project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/ceilingFan_SW.png?fileID=2800000&guid=1b20a80ffb93ba245a602d49eca18fa7&type=3#ceilingFan_SW');
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 32px;
+    height: 32px;
+}
+
+.TopBarContainer {
+    flex-direction: row;
+    margin-left: 4px;
+    margin-right: 4px;
+    margin-top: 0;
+    margin-bottom: 0;
+    flex-grow: 1;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    align-items: center;
+    height: 100%;
+    width: 25%;
+}
+
+.TopBarIcon {
+    background-image: url('project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/bedSingle_SW.png?fileID=2800000&guid=5a7be4916d2fe3e4cbbe5dea4472947d&type=3#bedSingle_SW');
+    -unity-background-scale-mode: scale-to-fit;
+    width: 120px;
+    height: 95%;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+}
+
+.TopProgressBar {
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-direction: column;
+}
