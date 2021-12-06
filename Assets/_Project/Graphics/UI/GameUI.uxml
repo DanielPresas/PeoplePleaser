@@ -1,10 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
     <Style src="project://database/Assets/_Project/Graphics/UI/GameUI.uss?fileID=7433441132597879392&amp;guid=3c925e62bf189f448a4a1f3642fad92d&amp;type=3#GameUI" />
     <ui:VisualElement name="TopBars" style="align-items: center; flex-direction: row; justify-content: flex-end; background-color: rgba(42, 42, 42, 0.6); border-bottom-width: 2px; border-bottom-color: rgb(0, 0, 0); height: 140px;">
-        <ui:VisualElement name="TopBar-Work" class="TopBar TopBarContainer" style="flex-direction: row;">
-            <ui:VisualElement name="WorkIcon" class="TopBarIcon" style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/laptop_SW.png?fileID=2800000&amp;guid=a48652c3395c85646ab56c1f958dc2d0&amp;type=3#laptop_SW&apos;);" />
-            <ui:ProgressBar name="WorkBar" title="Work" class="TopProgressBar" />
-        </ui:VisualElement>
         <ui:VisualElement name="TopBar-Love" class="TopBar TopBarContainer">
             <ui:VisualElement name="LoveIcon" class="TopBarIcon" style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/pillow_SW.png?fileID=2800000&amp;guid=90242503d0347a84ea4382b198a702c5&amp;type=3#pillow_SW&apos;);" />
             <ui:ProgressBar name="LoveBar" title="Love" class="TopProgressBar" />
@@ -13,41 +9,66 @@
             <ui:VisualElement name="FamilyIcon" class="TopBarIcon" style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/books_SW.png?fileID=2800000&amp;guid=b5c963e6556f2dc46bb005e95762284e&amp;type=3#books_SW&apos;);" />
             <ui:ProgressBar name="FamilyBar" title="Family" class="TopProgressBar" />
         </ui:VisualElement>
+        <ui:VisualElement name="TopBar-Work" class="TopBar TopBarContainer" style="flex-direction: row;">
+            <ui:VisualElement name="WorkIcon" class="TopBarIcon" style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/laptop_SW.png?fileID=2800000&amp;guid=a48652c3395c85646ab56c1f958dc2d0&amp;type=3#laptop_SW&apos;);" />
+            <ui:ProgressBar name="WorkBar" title="Work" class="TopProgressBar" />
+        </ui:VisualElement>
         <ui:VisualElement name="TopBar-Clock" class="TopBarContainer" style="align-items: center; justify-content: space-around; width: 15%; border-left-width: 2px; border-left-color: rgb(0, 0, 0); height: 100%;">
             <ui:VisualElement name="ClockIcon" class="TopBarIcon" />
-            <ui:Label text="00:00 am" display-tooltip-when-elided="true" name="ClockText" style="-unity-font: url(&apos;project://database/Assets/_Project/Graphics/UI/Fonts/Cuprum-VariableFont_wght.ttf?fileID=12800000&amp;guid=7c8cd956ae05d214e997059416ddd9d3&amp;type=3#Cuprum-VariableFont_wght&apos;); -unity-text-align: middle-center; white-space: nowrap; color: rgb(210, 210, 210); font-size: 40%; flex-grow: 0; justify-content: space-around; flex-shrink: 1; align-items: stretch; height: 100%;" />
+            <ui:Label text="00:00 am" display-tooltip-when-elided="true" name="ClockText" style="-unity-font: url(&apos;project://database/Assets/_Project/Graphics/Fonts/Cuprum-VariableFont_wght.ttf?fileID=12800000&amp;guid=7c8cd956ae05d214e997059416ddd9d3&amp;type=3#Cuprum-VariableFont_wght&apos;); -unity-text-align: middle-center; white-space: nowrap; color: rgb(210, 210, 210); font-size: 40%; flex-grow: 0; justify-content: space-around; flex-shrink: 1; align-items: stretch; height: 100%;" />
         </ui:VisualElement>
     </ui:VisualElement>
     <ui:VisualElement name="NextTasks" style="justify-content: space-around; align-items: stretch; width: 350px; height: 500px;">
-        <ui:VisualElement name="NextTask-Love" class="NextTask NextTaskContainer">
-            <ui:VisualElement name="TaskBackground" style="justify-content: center; align-items: center; flex-grow: 1; width: 100%; background-color: rgb(188, 188, 188); border-left-width: 0; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
-                <ui:Label text="Lover" display-tooltip-when-elided="true" name="TaskTitle" class="NextTaskTitle" />
-                <ui:Label text="Description" display-tooltip-when-elided="true" name="TaskDescription" class="NextTaskDescription" style="color: rgb(0, 0, 0); -unity-text-align: middle-center; white-space: nowrap;" />
-                <ui:VisualElement name="TaskTimerContainer" style="position: absolute; bottom: 2px; width: 100%; justify-content: space-between; flex-direction: row; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; align-items: center;">
+        <ui:VisualElement name="NextTask-Love" class="NextTask NextTaskContainer" style="flex-direction: row; align-items: center; justify-content: space-around;">
+            <ui:Button display-tooltip-when-elided="true" style="flex-grow: 1; flex-shrink: 1; justify-content: center; flex-direction: column; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; margin-left: 0; align-items: center; height: 100%;">
+                <ui:Label text="Lover" display-tooltip-when-elided="true" name="TaskTitle" class="NextTaskTitle" style="top: 2px; left: auto;" />
+                <ui:Label text="LoveDescription" display-tooltip-when-elided="true" name="TaskDescription" class="NextTaskDescription" style="color: rgb(0, 0, 0); -unity-text-align: middle-center; white-space: nowrap;" />
+                <ui:VisualElement name="TaskTimerContainer" class="NextTaskTimerContainer">
                     <ui:VisualElement name="TaskTimerIcon" class="NextTaskTimerIcon" style="flex-direction: row; justify-content: space-between; background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/ceilingFan_SW.png?fileID=2800000&amp;guid=1b20a80ffb93ba245a602d49eca18fa7&amp;type=3#ceilingFan_SW&apos;); margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
                     <ui:ProgressBar title="LoveTimer" name="TaskTimerPB" style="flex-grow: 1;" />
                 </ui:VisualElement>
-            </ui:VisualElement>
+            </ui:Button>
         </ui:VisualElement>
-        <ui:VisualElement name="NextTask-Family" class="NextTask NextTaskContainer">
-            <ui:VisualElement name="TaskBackground" style="justify-content: center; align-items: center; flex-grow: 1; width: 100%; background-color: rgb(188, 188, 188); border-left-width: 0; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
-                <ui:Label text="Family" display-tooltip-when-elided="true" name="TaskTitle" class="NextTaskTitle" style="-unity-font: url(&apos;project://database/Assets/_Project/Graphics/UI/Fonts/Cuprum-VariableFont_wght.ttf?fileID=12800000&amp;guid=7c8cd956ae05d214e997059416ddd9d3&amp;type=3#Cuprum-VariableFont_wght&apos;); -unity-text-align: middle-center; position: absolute; top: 2px; color: rgb(0, 0, 0);" />
-                <ui:Label text="Description" display-tooltip-when-elided="true" name="TaskDescription" class="NextTaskDescription" style="color: rgb(0, 0, 0); -unity-text-align: middle-center; white-space: nowrap;" />
-                <ui:VisualElement name="TaskTimerContainer" style="position: absolute; bottom: 2px; width: 100%; justify-content: space-between; flex-direction: row; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; align-items: center;">
+        <ui:VisualElement name="NextTask-Family" class="NextTask NextTaskContainer" style="flex-direction: row;">
+            <ui:Button display-tooltip-when-elided="true" style="flex-grow: 1; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; height: 100%; align-items: center; flex-direction: column; flex-shrink: 1; margin-left: 0;">
+                <ui:Label text="Family" display-tooltip-when-elided="true" name="TaskTitle" class="NextTaskTitle" style="-unity-font: url(&apos;project://database/Assets/_Project/Graphics/Fonts/Cuprum-VariableFont_wght.ttf?fileID=12800000&amp;guid=7c8cd956ae05d214e997059416ddd9d3&amp;type=3#Cuprum-VariableFont_wght&apos;); -unity-text-align: middle-center; color: rgb(0, 0, 0);" />
+                <ui:Label text="FamilyDescription" display-tooltip-when-elided="true" name="TaskDescription" class="NextTaskDescription" style="color: rgb(0, 0, 0); -unity-text-align: middle-center; white-space: nowrap;" />
+                <ui:VisualElement name="TaskTimerContainer" class="NextTaskTimerContainer" style="width: 100%; justify-content: space-between; flex-direction: row; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; align-items: center;">
                     <ui:VisualElement name="TaskTimerIcon" class="NextTaskTimerIcon" style="flex-direction: row; justify-content: space-between; background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/ceilingFan_SW.png?fileID=2800000&amp;guid=1b20a80ffb93ba245a602d49eca18fa7&amp;type=3#ceilingFan_SW&apos;); margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px;" />
                     <ui:ProgressBar title="FamilyTimer" name="TaskTimerPB" style="flex-grow: 1;" />
                 </ui:VisualElement>
-            </ui:VisualElement>
+            </ui:Button>
         </ui:VisualElement>
-        <ui:VisualElement name="NextTask-Work" class="NextTask NextTaskContainer">
-            <ui:VisualElement name="TaskBackground" style="justify-content: center; align-items: center; flex-grow: 1; width: 100%; background-color: rgb(188, 188, 188); border-left-width: 0; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);">
-                <ui:Label text="Work" display-tooltip-when-elided="true" name="TaskTitle" class="NextTaskTitle" style="-unity-font: url(&apos;project://database/Assets/_Project/Graphics/UI/Fonts/Cuprum-VariableFont_wght.ttf?fileID=12800000&amp;guid=7c8cd956ae05d214e997059416ddd9d3&amp;type=3#Cuprum-VariableFont_wght&apos;); -unity-text-align: middle-center; position: absolute; top: 2px; color: rgb(0, 0, 0);" />
-                <ui:Label text="Description" display-tooltip-when-elided="true" name="TaskDescription" class="NextTaskDescription" />
-                <ui:VisualElement name="TaskTimerContainer" style="position: absolute; bottom: 2px; width: 100%; justify-content: space-between; flex-direction: row; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; align-items: center;">
+        <ui:VisualElement name="NextTask-Work" class="NextTask NextTaskContainer" style="flex-direction: row;">
+            <ui:Button display-tooltip-when-elided="true" style="height: 100%; flex-grow: 1; align-items: center; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 0; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; justify-content: space-around; margin-left: 0;">
+                <ui:Label text="Work" display-tooltip-when-elided="true" name="TaskTitle" class="NextTaskTitle" style="-unity-font: url(&apos;project://database/Assets/_Project/Graphics/Fonts/Cuprum-VariableFont_wght.ttf?fileID=12800000&amp;guid=7c8cd956ae05d214e997059416ddd9d3&amp;type=3#Cuprum-VariableFont_wght&apos;); -unity-text-align: middle-center; color: rgb(0, 0, 0);" />
+                <ui:Label text="WorkDescription" display-tooltip-when-elided="true" name="TaskDescription" class="NextTaskDescription" />
+                <ui:VisualElement name="TaskTimerContainer" class="NextTaskTimerContainer" style="width: 100%; justify-content: space-between; flex-direction: row; padding-left: 16px; padding-right: 16px; padding-top: 8px; padding-bottom: 8px; align-items: center;">
                     <ui:VisualElement name="TaskTimerIcon" class="NextTaskTimerIcon" />
                     <ui:ProgressBar title="WorkTimer" name="TaskTimerPB" style="flex-grow: 1;" />
                 </ui:VisualElement>
-            </ui:VisualElement>
+            </ui:Button>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:VisualElement name="TaskFullView" style="position: absolute; align-items: center; justify-content: center; height: 70%; width: 70%; left: 15%; top: 20%; background-color: rgb(188, 188, 188); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); flex-wrap: wrap; display: none;">
+        <ui:Button text="X" display-tooltip-when-elided="true" name="CloseButton" style="position: absolute; top: 1%; right: 1%; margin-left: 4px; margin-right: 4px; margin-top: 4px; margin-bottom: 4px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0); border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; -unity-font-style: bold;" />
+        <ui:Label text="Title" display-tooltip-when-elided="true" name="Title" style="font-size: 56px; -unity-text-align: middle-center;" />
+        <ui:Label text="Description" display-tooltip-when-elided="true" name="Description" style="font-size: 36px;" />
+        <ui:VisualElement style="flex-direction: row; width: 50%; justify-content: space-between;">
+            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/pillow_SW.png?fileID=2800000&amp;guid=90242503d0347a84ea4382b198a702c5&amp;type=3#pillow_SW&apos;); width: 96px; height: 96px; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px;" />
+            <ui:ProgressBar title="LoveDelta" style="flex-grow: 1; align-items: stretch; justify-content: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: row; width: 50%; justify-content: space-between;">
+            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/books_SW.png?fileID=2800000&amp;guid=b5c963e6556f2dc46bb005e95762284e&amp;type=3#books_SW&apos;); width: 96px; height: 96px; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px;" />
+            <ui:ProgressBar title="FamilyDelta" style="flex-grow: 1; align-items: stretch; justify-content: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: row; width: 50%; justify-content: space-between;">
+            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/laptop_SW.png?fileID=2800000&amp;guid=a48652c3395c85646ab56c1f958dc2d0&amp;type=3#laptop_SW&apos;); width: 96px; height: 96px; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px;" />
+            <ui:ProgressBar title="WorkDelta" style="flex-grow: 1; align-items: stretch; justify-content: center;" />
+        </ui:VisualElement>
+        <ui:VisualElement style="flex-direction: row; width: 70%; justify-content: space-around;">
+            <ui:VisualElement style="background-image: url(&apos;project://database/Assets/_Project/Graphics/furniturekit_updated/Isometric/ceilingFan_SW.png?fileID=2800000&amp;guid=1b20a80ffb93ba245a602d49eca18fa7&amp;type=3#ceilingFan_SW&apos;); width: 128px; height: 128px; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px; align-items: center; justify-content: center;" />
+            <ui:ProgressBar title="Timer" style="align-items: stretch; justify-content: center; flex-direction: column; flex-grow: 1; margin-left: 8px; margin-right: 8px; margin-top: 8px; margin-bottom: 8px;" />
         </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
